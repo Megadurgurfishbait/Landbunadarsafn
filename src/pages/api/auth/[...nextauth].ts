@@ -1,4 +1,4 @@
-import NextAuth, { InitOptions } from 'next-auth'
+import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
 import Adapters from 'next-auth/adapters'
 
@@ -10,7 +10,7 @@ const prisma = new PrismaClient()
 const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options)
 export default authHandler
 
-const options: InitOptions = {
+const options = {
   providers: [
     Providers.GitHub({
       clientId: process.env.GITHUB_ID,

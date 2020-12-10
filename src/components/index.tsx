@@ -1,1 +1,5 @@
-export { default as NavBar } from './NavBar'
+export { Header } from './Header'
+export { News } from './News'
+export { Information } from './Information'
+export * from './frodleikur'
+export { Switch } from './Utility'
