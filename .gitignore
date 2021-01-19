@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+/backend
 
 # production
 /build
@@ -34,5 +35,3 @@ prisma/.env
 
 # vercel
 .vercel
-
-frontend-mentor

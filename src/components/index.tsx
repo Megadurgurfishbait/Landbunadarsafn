@@ -1,5 +1,5 @@
 export { Header } from './Header'
 export { News } from './News'
-export { Information } from './Information'
+export { Information } from './Forsida/Information'
 export * from './frodleikur'
 export { Switch } from './Utility'

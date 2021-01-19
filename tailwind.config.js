@@ -15,7 +15,27 @@ module.exports = {
     extend: {
       colors: {
         violet: colors.violet,
+        mainColor: '#e4dfcf',
+        secondary: '#8F0222',
+        stylishBlack: '#414645',
+        h1: `#100c08`,
       },
+      minHeight: {
+        '85vh': '85vh',
+      },
+      maxHeight: {
+        '85vh': '85vh',
+      },
+      display: {
+        hide: 'hidden!important',
+      },
+    },
+    minWidth: {
+      0: '0',
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
+      full: '100%',
     },
   },
   variants: {},

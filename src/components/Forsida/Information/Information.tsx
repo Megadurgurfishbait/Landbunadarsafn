@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Layout } from '../../Layout'
 import {
   IconClock,
   IconPhone,
@@ -7,6 +6,7 @@ import {
   IconInfoCircle,
   TablerIconProps,
 } from 'tabler-icons'
+import { Container, Flex, Text } from '@chakra-ui/react'
 
 interface IinfoDetails {
   name: string
@@ -35,29 +35,38 @@ const InfoDetails = [
   },
 
   {
-    name: 'Upplýsingar',
+    name: 'Kynningar',
     Icon: IconInfoCircle,
     text:
       'Einnig er boðið upp á stutta kynningu á Hvanneyrarstað og starfinu þar m.a. með heimsókn í Hvanneyrarkirkju, eina fallegustu kirkju landsins og örstuttri gönguferð um Gamla skólastaðinn (þegar veður leyfir). Æskilegt er að panta slíka kynningu með fyrirvara (s. 844 77 40). Minnt er á Skemmuna kaffihús í næsta nágrenni safnsins, sem er opið daglega í sumar frá kl. 13.30.',
+  },
+  {
+    name: 'Staðsetning',
+    Icon: IconInfoCircle,
+    text: 'Halldórsfjósi \nHvanneyri, 311 Borgarnes',
   },
 ] as IinfoDetails[]
 
 export const Information: React.FunctionComponent<{}> = () => {
   return (
-    <Layout>
-      <div className="flex-col py-4">
+    <Container className="flex justify-center">
+      <Flex className="py-4 justify-center flex-wrap lg:w-full lg:justify-start xl:w-9/12 ">
         {InfoDetails.map(({ text, name, Icon }) => (
-          <div className="flex-col items-center  min-w-full mb-8 ">
-            <div className="flex justify-centerm mx-auto border-b-2 w-2/3 text-red-400 border-red-400 ">
-              <Icon size={50} stroke={1} className="mb-1 mx-auto" />
-            </div>
-            <h1 className="mb-3 text-center text-sm font-extrabold tracking-tight text-gray-700 mt-2">
-              {name}
-            </h1>
-            <p className="text-sm">{text}</p>
-          </div>
+          <Flex className="w-8/12 m-2 my-4 lg:w-5/12 lg:mx-4 ">
+            <Flex className="p-3">
+              <Icon size={30} className="opacity-70" />
+            </Flex>
+            <Flex flexDir="column">
+              <Text as="h1" className="font-bold opacity-80">
+                {name}
+              </Text>
+              <Text as="p" className="opacity-60 whitespace-pre-wrap">
+                {text}
+              </Text>
+            </Flex>
+          </Flex>
         ))}
-      </div>
-    </Layout>
+      </Flex>
+    </Container>
   )
 }
