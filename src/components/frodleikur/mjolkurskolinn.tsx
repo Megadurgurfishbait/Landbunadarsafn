@@ -1,3 +1,26 @@
-export const Mjolkurskolinn: React.FC<{ value: string }> = () => (
-  <div>Mjolkurskolinn</div>
-)
+import { Box } from '@chakra-ui/react'
+import React from 'react'
+import { useQuery } from 'react-query'
+import { getTextAsMarkup } from '../../lib/api/frodleikurFetch'
+import { DangerousDiv } from '../Shared/DangerousDiv'
+
+export const Mjolkurskolinn: React.FC<IFrodleikur> = () => {
+  const { isLoading, data } = useQuery('mjolkurskolinn', () =>
+    getTextAsMarkup('mjolkurskolinn')
+  )
+
+  return (
+    <Box className="focus:outline-none">
+      {isLoading ? (
+        <div>Loading</div>
+      ) : (
+        <DangerousDiv
+          className="whitespace-pre-wrap"
+          dangerouslySetInnerHTML={{
+            __html: data,
+          }}
+        ></DangerousDiv>
+      )}
+    </Box>
+  )
+}

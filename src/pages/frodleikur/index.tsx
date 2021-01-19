@@ -1,13 +1,6 @@
 import * as React from 'react'
-import { UmSafnid } from '../../components/frodleikur'
-import { Layout } from '../../Layout'
-
-interface IIndexProps {}
-
-const Index: React.FunctionComponent<IIndexProps> = (props) => (
-  <Layout className="bg-black text-red-400">
-    <UmSafnid />
-  </Layout>
-)
+import { FrodleikurLayout } from '../../Layout/frodleikurLayout'
+// Taka til í þessum
+const Index: React.FunctionComponent<{}> = () => <FrodleikurLayout />
 
 export default Index

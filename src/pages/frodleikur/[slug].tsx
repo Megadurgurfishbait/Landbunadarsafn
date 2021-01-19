@@ -4,22 +4,24 @@ import { useRouter } from 'next/router'
 import * as C from '../../components/frodleikur'
 import { Switch } from '../../components/'
 import { Layout } from '../../Layout'
+import { FrodleikurLayout } from '../../Layout/frodleikurLayout'
 
 const Frodleikur: React.FunctionComponent<{}> = (): JSX.Element => {
   const router = useRouter()
   const { slug } = router.query
 
-  if (slug === undefined) return <Layout>loading</Layout>
+  if (slug === undefined) return <Layout>Hleður...</Layout>
   return (
-    <Layout className="p-4">
+    <FrodleikurLayout>
       <Switch test={slug as string}>
-        <C.Hvanneyri value="hvanneyri" />
-        <C.Arsskyrslur value="arsskyrslur" />
-        <C.UmSafnid value="umsafnid" />
-        <C.Stuttmyndir value="stuttmyndir" />
-        <C.Velunnarar value="velunnarar" />
+        <C.Hvanneyri path="hvanneyri" />
+        <C.Arsskyrslur path="arsskyrslur" />
+        <C.UmSafnid path="umsafnid" />
+        <C.Stuttmyndir path="stuttmyndir" />
+        <C.Velunnarar path="velunnarar" />
+        <C.Mjolkurskolinn path="mjolkurskolinn" />
       </Switch>
-    </Layout>
+    </FrodleikurLayout>
   )
 }
 
