@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
 import { useQuery } from 'react-query'
-import { getTextAsMarkup } from '../../lib/api/frodleikurFetch'
+import { getTextAsMarkup } from '../../lib/api/markdownFetch'
 import { DangerousDiv } from '../Shared/DangerousDiv'
 
 export const Mjolkurskolinn: React.FC<{}> = () => {

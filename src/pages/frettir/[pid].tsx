@@ -1,13 +1,13 @@
 /* eslint-disable no-restricted-globals */
 import * as React from 'react'
-import { Flex, Text } from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
-import { getArticle } from '../../lib/api/frodleikurFetch'
+import format from 'date-fns/format'
+import { CalendarIcon } from '@chakra-ui/icons'
+import { getArticle } from '../../lib/api/markdownFetch'
 import { DangerousDiv } from '../../components/Shared/DangerousDiv'
 import { Button } from '../../components/Shared/Button'
-import { CalendarIcon } from '@chakra-ui/icons'
-import format from 'date-fns/format'
 
 interface NewsProps {
   title?: string
@@ -30,18 +30,18 @@ export const News: React.FC<NewsProps> = () => {
       {!isSuccess ? (
         <div>loading</div>
       ) : (
-        <Flex className=" px-14 max-w-4xl flex-col mt-8 ">
+        <div className="flex px-14 max-w-4xl flex-col mt-8 ">
           <Button
             onClick={() => history.back()}
             className="w-16 mb-5 2xl:hidden"
             noArrow
             Text="Til baka"
           ></Button>
-          <Flex className="flex-col justify-center">
+          <div className="flex flex-col justify-center">
             <h1 className=" text-stylishBlack mb-2 leading-5 text-4xl">
               {data.title}
             </h1>
-            <Flex align="center">
+            <div className="flex items-center">
               <CalendarIcon className="mr-2" boxSize={12} color={'#8F0222'} />
               <Text
                 as="h5"
@@ -50,15 +50,15 @@ export const News: React.FC<NewsProps> = () => {
               >
                 {format(new Date(data.date), 'dd/MM/yyyy')}
               </Text>
-            </Flex>
+            </div>
             <DangerousDiv
               className="mb-4 pl-0 ml-0"
               dangerouslySetInnerHTML={{
                 __html: data.content,
               }}
             ></DangerousDiv>
-          </Flex>
-        </Flex>
+          </div>
+        </div>
       )}
     </>
   )

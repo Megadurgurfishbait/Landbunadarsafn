@@ -1,4 +1,3 @@
-import { Divider, Flex } from '@chakra-ui/react'
 import { SectionFrettir, SectionFrodleikur } from '../components/Forsida'
 import { getText } from '../lib/api/frodleikurFetch'
 import { useQuery } from 'react-query'
@@ -9,23 +8,23 @@ import { Information } from '../components'
 
 export default function Home() {
   const { isSuccess, data } = useQuery('forsida', () => getText('forsida'))
-  console.log(data)
+
   return (
     <>
       {isSuccess && (
-        <Flex width="100%" flexDir="column" alignItems="center">
+        <div className="flex w-full flex-col items-center">
           <SectionHeroImage
             forsidumynd={data.Forsidumynd.url}
             subTitle={data.subTitle}
             Title={data.Title}
             icon={data.mynd.url}
           />
-          <Divider h={200} />
+          <div className="h-48" />
           <SectionFrettir />
           <SectionFrodleikur />
-          <Divider className="h-10" />
+          <div className="h-10" />
           <Information />
-        </Flex>
+        </div>
       )}
     </>
   )

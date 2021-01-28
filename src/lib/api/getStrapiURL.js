@@ -8,7 +8,6 @@ export function getStrapiURL(path = '') {
 
 // Helper to make GET requests to Strapi
 export async function fetchAPI(path) {
-  console.log(path)
   if (path === '/articles/undefined') return null
   const requestUrl = getStrapiURL(path)
   const response = await fetch(requestUrl)

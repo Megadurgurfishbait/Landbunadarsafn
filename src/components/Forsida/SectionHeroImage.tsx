@@ -1,4 +1,4 @@
-import { Container, Flex } from '@chakra-ui/react'
+import { Container } from '@chakra-ui/react'
 
 import { WelcomeText, Background } from './'
 
@@ -15,16 +15,16 @@ export const SectionHeroImage: React.FC<{
       width="100%"
       marginRight="60px"
     >
-      <Flex width="100%" flexDir="column">
-        <Flex justifyContent="flex-end" className="flex-1 p-8 ">
+      <div className="flex flex-col w-full">
+        <div className="flex-1 p-8 flex justify-end">
           <Container height="100px" width="100px">
             <img src={icon} alt="mynd" />
           </Container>
-        </Flex>
-        <Flex justifyContent="flex-start" className="flex-1 ">
+        </div>
+        <div className="flex-1 flex justify-start">
           <WelcomeText Title={Title} SubTitle={subTitle} />
-        </Flex>
-      </Flex>
+        </div>
+      </div>
     </Container>
   </Background>
 )

@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Flex, List, ListItem } from '@chakra-ui/react'
+import { List, ListItem } from '@chakra-ui/react'
 import Link from 'next/link'
 
 export interface listToMap {
@@ -13,8 +13,8 @@ interface ListMapProps {
 }
 
 export const ListMap: React.FC<ListMapProps> = ({ listToMap, title }) => (
-  <Flex className="flex-1 flex-col py-4 h-48 items-center ">
-    <Flex className="flex-col">
+  <div className=" flex flex-1 flex-col py-4 h-48 items-center ">
+    <div className="flex flex-col">
       <h2 className="text-sm sm:text-base text-left font-semibold text-white">
         {title}
       </h2>
@@ -41,6 +41,6 @@ export const ListMap: React.FC<ListMapProps> = ({ listToMap, title }) => (
           </>
         ))}
       </List>
-    </Flex>
-  </Flex>
+    </div>
+  </div>
 )

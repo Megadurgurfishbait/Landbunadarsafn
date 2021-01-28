@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, List, ListItem, Text } from '@chakra-ui/react'
+import { List, ListItem, Text } from '@chakra-ui/react'
 import { useQuery } from 'react-query'
 import { format } from 'date-fns'
 import { Button } from '../../components/Shared'
@@ -27,7 +27,7 @@ const Frettir: React.FC<{}> = () => {
       ) : isError ? (
         <div>Error: {error}</div>
       ) : (
-        <Flex className="w-full mb-4 flex-col justify-between">
+        <div className="w-full mb-4 flex flex-col justify-between">
           <Text as="h1" className="text-center text-3xl my-10">
             Allar fréttir
           </Text>
@@ -53,7 +53,7 @@ const Frettir: React.FC<{}> = () => {
               onClick={() => setNumberOfItems((old) => old + 10)}
             />
           </List>
-        </Flex>
+        </div>
       )}
     </>
   )

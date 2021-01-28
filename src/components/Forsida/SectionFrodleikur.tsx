@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 
 import { Routes } from '../../Routes'
 import { Button } from '../Shared'
@@ -38,10 +38,9 @@ enum zIndex {
 }
 
 export const SectionFrodleikur = () => (
-  <Flex
+  <Box
     h={700}
-    w="100%"
-    className="min-w-full justify-between flex-col overflow-visible relative mt-20"
+    className="min-w-full justify-between flex-col overflow-visible relative mt-20 w-full"
   >
     <svg
       width="1723"
@@ -62,7 +61,7 @@ export const SectionFrodleikur = () => (
         fill="#FFF"
       />
     </svg>
-    <Flex className="min-h-full">
+    <div className="flex min-h-full">
       <Box
         justifyContent="center"
         alignItems="center"
@@ -90,10 +89,9 @@ export const SectionFrodleikur = () => (
           Fróðleikur
         </Text>
       </Box>
-      <Flex
-        zIndex={zIndex.LIST}
-        bgColor="#A83852"
-        className="w-full sm:w-2/5  md:w-1/3 flex-col items-center justify-center text-white sm:max-h-full text-left "
+      <div
+        style={{ zIndex: zIndex.LIST, backgroundColor: '#A83852' }}
+        className="w-ful flex sm:w-2/5  md:w-1/3 flex-col items-center justify-center text-white sm:max-h-full text-left "
       >
         <Text
           letterSpacing={5}
@@ -102,13 +100,13 @@ export const SectionFrodleikur = () => (
         >
           Fróðleikur
         </Text>
-        <Flex className="flex-col">
+        <div className="flex flex-col">
           {Kalli.map((v) => (
             <Button noArrow Text={v.label} href={v.location} />
           ))}
-        </Flex>
-      </Flex>
-    </Flex>
+        </div>
+      </div>
+    </div>
 
     <svg
       width="1713"
@@ -126,5 +124,5 @@ export const SectionFrodleikur = () => (
         fill="#FFF"
       />
     </svg>
-  </Flex>
+  </Box>
 )

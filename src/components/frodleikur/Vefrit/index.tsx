@@ -16,7 +16,7 @@ import { getText } from '../../../lib/api/frodleikurFetch'
 
 export const Vefrit: React.FC<{}> = () => {
   const { isSuccess, data } = useQuery('vefrit', () => getText('vefrit'))
-  console.log(data)
+
   return (
     <>
       {isSuccess && (

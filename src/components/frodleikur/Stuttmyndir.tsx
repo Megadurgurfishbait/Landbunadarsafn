@@ -1,9 +1,9 @@
-import { AspectRatio, Flex, Link } from '@chakra-ui/react'
+import { AspectRatio, Link } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 
 // TODO: Taka út Text componentinn minn
 export const Stuttmyndir: React.FC<{}> = () => (
-  <Flex flexDir="column" alignItems="center" className="max-w-full">
+  <div className="max-w-full flex flex-col items-center">
     <Text as="h1" className="text-lg font-semibold my-4">
       Fordson
     </Text>
@@ -55,5 +55,5 @@ export const Stuttmyndir: React.FC<{}> = () => (
       skilvindum og mikilvægi þeirra á íslenskum heimilum á 19.- og 20. öldinni.
     </Text>
     <Text></Text>
-  </Flex>
+  </div>
 )

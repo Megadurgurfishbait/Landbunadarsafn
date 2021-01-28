@@ -1,5 +1,4 @@
 import { CardMapper } from './Frettir/'
-import { Flex } from '@chakra-ui/react'
 import { Button } from '../Shared'
 import { useQuery } from 'react-query'
 import { frontPageArticles } from '../../lib/api/frodleikurFetch'
@@ -21,17 +20,10 @@ export const SectionFrettir = () => {
       {!isSuccess ? (
         <div>Hleður</div>
       ) : (
-        <Flex
-          flexDir="column"
-          height="max-content"
-          width="100%"
-          justifyContent="center"
-          alignItems="center"
-          className="bg-transparent"
-        >
+        <div className="bg-transparent items-center justify-center flex w-full flex-col">
           <CardMapper Frettir={Items} />
           <Button Text="Skoða allar fréttir" href="frettir" />
-        </Flex>
+        </div>
       )}
     </>
   )

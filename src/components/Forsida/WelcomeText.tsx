@@ -1,17 +1,13 @@
 import styled from '@emotion/styled'
-import { Flex, Text } from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
 
 export const WelcomeText = ({ Title, SubTitle }) => (
-  <Flex
-    className=" pb-4 mx-12 my-8"
-    justifyContent="flex-end"
-    flexDir="column"
-    fontFamily="Roboto"
-  >
+  <div className=" pb-4 mx-12 my-8 justify-end flex flex-col">
     <Text
       as="h1"
       letterSpacing={[-1, -5]}
       className="text-4xl  md:text-7xl font-thin text-mainColor "
+      fontFamily="Roboto"
     >
       {Title}
     </Text>
@@ -22,10 +18,11 @@ export const WelcomeText = ({ Title, SubTitle }) => (
       color="#E4DFCF"
       noOfLines={3}
       className="text-base md:text-2xl self-start uppercase"
+      fontFamily="Roboto"
     >
       {SubTitle}
     </Text>
-  </Flex>
+  </div>
 )
 
 const Divider = styled.div`

@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Container } from '@chakra-ui/react'
+import { Box, Text, Container } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { Button } from '../../Shared/'
 
@@ -14,7 +14,7 @@ export const CardContainer: React.FC<IFrett> = ({
   ButtonHref,
 }) => (
   <Container className="w-64 h-64 relative m-5">
-    <Flex
+    <Box
       zIndex={3}
       className="h-full w-full p-5 flex shadow-lg rounded absolute flex-col bg-white"
     >
@@ -23,24 +23,24 @@ export const CardContainer: React.FC<IFrett> = ({
           {Title}
         </Text>
       </Box>
-      <Flex className="flex-1 items-center">
+      <div className="flex-1 items-center flex">
         <Text noOfLines={4} className="text-sm leading-5 font-sans font-light">
           {TextExample}
         </Text>
-      </Flex>
+      </div>
       <Box className="h-8">
         <Button href={`/frettir/${ButtonHref}`} Text={'Skoða frétt'} />
       </Box>
-    </Flex>
+    </Box>
     <Try />
   </Container>
 )
 
 export const CardMapper: React.FC<{ Frettir: IFrett[] }> = ({ Frettir }) => (
-  <Flex
+  <Box
     width="100%"
-    className="flex-wrap flex-col items-center flex-1 justify-evenly my-20 sm:flex-row "
-    zIndex="18 "
+    className="flex-wrap flex-col items-center flex-1 justify-evenly my-20 sm:flex-row w-full flex"
+    zIndex="18"
   >
     {Frettir.map((frett) => (
       <CardContainer
@@ -49,7 +49,7 @@ export const CardMapper: React.FC<{ Frettir: IFrett[] }> = ({ Frettir }) => (
         ButtonHref={frett.ButtonHref}
       />
     ))}
-  </Flex>
+  </Box>
 )
 
 const Try = styled.div`

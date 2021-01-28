@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Container, Flex, Text } from '@chakra-ui/react'
+import { Container, Text } from '@chakra-ui/react'
 import {
   IconClock,
   IconCreditCard,
@@ -51,23 +51,23 @@ const InfoDetails = [
 export const Information: React.FunctionComponent<{}> = () => {
   return (
     <Container className="flex justify-center">
-      <Flex className="py-4 justify-center flex-wrap lg:w-full lg:justify-start xl:w-9/12 ">
+      <div className="py-4 flex justify-center flex-wrap lg:w-full lg:justify-start xl:w-9/12 ">
         {InfoDetails.map(({ text, name, Icon }) => (
-          <Flex className="w-8/12 m-2 my-4 lg:w-5/12 lg:mx-4 ">
-            <Flex className="p-3">
+          <div className="w-8/12 m-2 my-4 lg:w-5/12 lg:mx-4 flex">
+            <div className="p-3 flex">
               <Icon />
-            </Flex>
-            <Flex flexDir="column">
+            </div>
+            <div className="flex flex-col">
               <Text as="h1" className="font-bold opacity-80">
                 {name}
               </Text>
               <Text as="p" className="opacity-60 whitespace-pre-wrap">
                 {text}
               </Text>
-            </Flex>
-          </Flex>
+            </div>
+          </div>
         ))}
-      </Flex>
+      </div>
     </Container>
   )
 }
