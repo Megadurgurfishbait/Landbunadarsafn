@@ -1,6 +1,10 @@
+import { request } from 'http'
+
 export function getStrapiURL(path = '') {
   return `${
-    process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'
+    process.env.NODE_ENV.STRAPI_API_URL ||
+    process.env.NEXT_PUBLIC_STRAPI_API_URL ||
+    'http://localhost:1337'
   }${path}`
 }
 
@@ -8,6 +12,7 @@ export function getStrapiURL(path = '') {
 export async function fetchAPI(path) {
   if (path === '/articles/undefined') return null
   const requestUrl = getStrapiURL(path)
+  console.log(requestUrl)
   const response = await fetch(requestUrl)
   const data = await response.json()
   return data
