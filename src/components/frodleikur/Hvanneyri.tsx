@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { Text } from '../Shared'
 
-export const Hvanneyri: React.FC<IFrodleikur> = () => {
+export const Hvanneyri: React.FC<{}> = () => {
   const { isLoading, data } = useQuery('Hvanneyri', () => getText('Hvanneyris'))
   return (
     <Container>

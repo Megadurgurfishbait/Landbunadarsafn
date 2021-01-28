@@ -1,4 +1,5 @@
-import { Button as B } from '@chakra-ui/react'
+import Link from 'next/link'
+import { Button as B, Text as T } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 
 // __css er nauðsynlegt til að override'a css frá Chakra UI
@@ -6,28 +7,50 @@ export const Button = ({
   Text,
   className,
   noArrow,
-  absolute,
   onClick,
+  href,
 }: {
   Text: string
   className?: string
   noArrow?: boolean
-  absolute?: boolean
-  onClick: () => void
-}) => (
-  <B
-    borderBottom="1px solid"
-    __css={{ position: (absolute && 'absolute') || 'relative' }}
-    className={`leading-8 text-l border-stylishBlack ${className}`}
-    letterSpacing={1.1}
-    onClick={onClick}
-  >
-    {Text}
+  onClick?: () => void
+  href?: string
+}) => {
+  return (
+    <>
+      {href ? (
+        <Link href={href}>
+          <a className="flex items-center sm:pt-2 w-max">
+            <TextNStyle Text={Text} className={className} noArrow={noArrow} />
+          </a>
+        </Link>
+      ) : (
+        <B onClick={onClick}>
+          <TextNStyle Text={Text} noArrow={noArrow} />
+        </B>
+      )}
+    </>
+  )
+}
+
+const TextNStyle: React.FC<{
+  Text: string
+  noArrow?: boolean
+  className?: string
+}> = ({ Text, noArrow, className }) => (
+  <>
+    <T
+      borderBottom="1px solid"
+      className={`leading-8 text-sm sm:text-base  border-stylishBlack ${className}`}
+      letterSpacing={[0, 1.1]}
+    >
+      {Text}
+    </T>
     {!noArrow && (
       <ArrowForwardIcon
         viewBox="0 -3 26 26"
         className="font-extralight ml-2 leading-8"
       />
     )}
-  </B>
+  </>
 )

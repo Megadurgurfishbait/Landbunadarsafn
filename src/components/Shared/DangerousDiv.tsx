@@ -16,24 +16,18 @@ export const DangerousDiv = styled.div`
   & > p {
     ${tw`text-sm my-0`}
   }
-  & > h2 {
-    text-align: center;
-    ${tw`text-center text-xl font-semibold`}
-  }
 
   & * img {
     display: block;
-    margin-left: auto;
+    max-width: 500px;
+    max-height: 500px;
     margin-right: auto;
     padding-right: 1rem;
     padding-bottom: 1rem;
-
-    &:nth-child(even) {
-      float: left;
-    }
-    &:nth-child(odd) {
-      float: left;
-    }
+  }
+  & > h2 {
+    text-align: center;
+    ${tw`text-center text-xl font-semibold`}
   }
 
   & * a {

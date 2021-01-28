@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "arsskyrslurs",
+  "info": {
+    "name": "Arsskyrslur",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Skyrslur": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": ["files"],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

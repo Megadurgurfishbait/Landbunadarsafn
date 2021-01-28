@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "forsidas",
+  "info": {
+    "name": "forsida",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "mynd": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false
+    },
+    "Forsidumynd": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

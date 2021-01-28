@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "vefrits",
+  "info": {
+    "name": "Vefrit",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Titill": {
+      "type": "string"
+    },
+    "Skjol_Fyrir_Vefrit_A": {
+      "type": "dynamiczone",
+      "components": ["shared.vefrit"]
+    },
+    "Skjol_Fyrir_Vefrit_B": {
+      "type": "dynamiczone",
+      "components": ["shared.vefrit"]
+    },
+    "Kynningar_Texti_Fyrir_Vefrit_A": {
+      "type": "text"
+    },
+    "Kynningar_Texti_Fyrir_Vefrit_B": {
+      "type": "text"
+    },
+    "Kynning_A_Vefritum": {
+      "type": "richtext"
+    }
+  }
+}

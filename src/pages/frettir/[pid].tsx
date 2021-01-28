@@ -28,13 +28,6 @@ export const News: React.FC<NewsProps> = () => {
 
   return (
     <>
-      <Button
-        absolute
-        onClick={() => history.back()}
-        className=" left-20 top-20 hidden 2xl:flex"
-        noArrow
-        Text="Til baka"
-      ></Button>
       {!isSuccess ? (
         <div>loading</div>
       ) : (
@@ -56,7 +49,7 @@ export const News: React.FC<NewsProps> = () => {
                 letterSpacing={1.7}
                 className="text-secondary leading-4 opacity-85 text-xs py-4 font-bold"
               >
-                {Moment(data.publishedAt).format('LL')}
+                {Moment(data.date).format('LL')}
               </Text>
             </Flex>
             <DangerousDiv

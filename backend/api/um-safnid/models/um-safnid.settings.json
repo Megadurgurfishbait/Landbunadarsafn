@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "um_safnids",
+  "info": {
+    "name": "umSafnid"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "richtext"
+    }
+  }
+}

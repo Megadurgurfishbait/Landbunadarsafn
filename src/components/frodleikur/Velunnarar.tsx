@@ -5,7 +5,7 @@ import { useQuery } from 'react-query'
 import { getText } from '../../lib/api/frodleikurFetch'
 import { Text } from '../Shared'
 
-export const Velunnarar: React.FC<IFrodleikur> = () => {
+export const Velunnarar: React.FC<{}> = () => {
   const { isLoading, data } = useQuery('velunnarar', () =>
     getText('velunnarars')
   )
@@ -16,7 +16,7 @@ export const Velunnarar: React.FC<IFrodleikur> = () => {
         <div>Loading</div>
       ) : (
         <>
-          <Text Variant="h1" text="Velunnarar" />
+          <Text Variant="h1" text="Velunnarar" className="mb-2" />
           <List>
             {data.map((v) => (
               <ListItem>{v.Texti}</ListItem>

@@ -9,7 +9,7 @@ import { Information } from '../components'
 
 export default function Home() {
   const { isSuccess, data } = useQuery('forsida', () => getText('forsida'))
-
+  console.log(data)
   return (
     <>
       {isSuccess && (

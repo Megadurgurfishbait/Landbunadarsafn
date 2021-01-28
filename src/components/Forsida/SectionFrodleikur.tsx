@@ -1,24 +1,31 @@
-import { Box, Container, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
+import { Routes } from '../../Routes'
 import { Button } from '../Shared'
 
 const Kalli = [
   {
-    label: 'Ársskýrsla',
+    label: 'Ársskýrslur',
+    location: Routes.Arsskyrslur,
   },
   {
     label: 'Um Safnið',
+    location: Routes.UmSafnid,
   },
   {
     label: 'Stuttmyndir',
+    location: Routes.Stuttmyndir,
   },
   {
     label: 'Hvanneyri',
+    location: Routes.Hvanneyri,
   },
   {
     label: 'Velunnarar',
+    location: Routes.Velunnarar,
   },
   {
     label: 'Mjólkurskólinn',
+    location: Routes.Mjolkurskolinn,
   },
 ]
 export const SectionFrodleikur = () => (
@@ -40,8 +47,8 @@ export const SectionFrodleikur = () => (
       className="absolute "
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M0 128.383C0 128.383 102.768 85.254 181.324 70.7107C259.88 56.1674 312.467 43.2229 454.117 44.1315C597.198 41.4058 652.659 63.8265 795.243 90.4019C937.828 116.977 1085.34 172.144 1245.59 162.986C1405.84 153.827 1626.5 72.5 1660.5 65C1694.5 57.5 1722.5 54.5 1722.5 54.5L1722.69 0H1645.43C1573.89 0 1430.81 0 1287.73 0C1144.65 0 1001.57 0 858.486 0C715.405 0 572.324 0 429.243 0C286.162 0 143.081 0 71.5405 0H0V128.383Z"
         fill="#FFF"
       />
@@ -82,11 +89,11 @@ export const SectionFrodleikur = () => (
         >
           Fróðleikur
         </Text>
-        <Container w={140}>
+        <Flex className="flex-col">
           {Kalli.map((v) => (
-            <Button noArrow className="pt-2" Text={v.label} />
+            <Button noArrow Text={v.label} href={v.location} />
           ))}
-        </Container>
+        </Flex>
       </Flex>
     </Flex>
 

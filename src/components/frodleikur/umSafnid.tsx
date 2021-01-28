@@ -1,10 +1,10 @@
-import { Box, Container } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 import { useQuery } from 'react-query'
 import { getText } from '../../lib/api/frodleikurFetch'
 import { Text } from '../Shared'
 
-export const UmSafnid: React.FC<IFrodleikur> = () => {
+export const UmSafnid: React.FC<{}> = () => {
   const { isLoading, data } = useQuery('UmSafnid', () => getText('um-safnids'))
 
   return (

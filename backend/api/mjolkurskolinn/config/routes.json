@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/mjolkurskolinn",
+      "handler": "mjolkurskolinn.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/mjolkurskolinn",
+      "handler": "mjolkurskolinn.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/mjolkurskolinn",
+      "handler": "mjolkurskolinn.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

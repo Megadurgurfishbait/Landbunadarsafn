@@ -1,12 +1,20 @@
-import { AspectRatio, Flex } from '@chakra-ui/react'
+import { AspectRatio, Flex, Link } from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
 
-import { Layout } from '../../Layout'
-import { Text } from '../Shared'
-
-export const Stuttmyndir: React.FC<IFrodleikur> = () => (
-  <Flex flexDir="column" alignItems="center">
-    <Text Variant="h1" text="Fordson" />
-    <AspectRatio minW="560px" maxW="560px" ratio={1}>
+// TODO: Taka út Text componentinn minn
+export const Stuttmyndir: React.FC<{}> = () => (
+  <Flex flexDir="column" alignItems="center" className="max-w-full">
+    <Text as="h1" className="text-lg font-semibold my-4">
+      Fordson
+    </Text>
+    <Link
+      href="https://www.youtube.com/watch?v=8j0mK2mxKr0&feature=emb_title"
+      className=" text-lg mb-4 sm:hidden"
+    >
+      Hægt að skoða hér
+    </Link>
+    {/* Sýnum ekki videoið á síma */}
+    <AspectRatio minW="560px" maxW="560px" ratio={1} className="hidden sm:flex">
       <iframe
         title="Fordson Video"
         src="https://www.youtube.com/embed/8j0mK2mxKr0"
@@ -18,12 +26,20 @@ export const Stuttmyndir: React.FC<IFrodleikur> = () => (
         }}
       ></iframe>
     </AspectRatio>
-    <Text
-      Variant="p"
-      text={`Bjarni Guðmundsson, verkefnisstjóri Landbúnaðarsafns Íslands, segir frá forvera dráttarvélanna.`}
-    />
-    <Text Variant="h1" text="Skilvindur" className="my-4" />
-    <AspectRatio minW="560px" maxW="560px" ratio={1}>
+    <Text as="p">
+      Bjarni Guðmundsson, verkefnisstjóri Landbúnaðarsafns Íslands, segir frá
+      forvera dráttarvélanna.
+    </Text>
+    <Text as="h1" className="text-lg font-semibold my-4">
+      Skilvindur
+    </Text>
+    <Link
+      href="https://www.youtube.com/watch?v=gMamAvZk_QE&feature=emb_title"
+      className=" text-lg mb-4 sm:hidden"
+    >
+      Hægt að skoða hér
+    </Link>
+    <AspectRatio minW="560px" maxW="560px" ratio={1} className="hidden sm:flex">
       <iframe
         title="Skilvindur Video"
         src="https://www.youtube.com/embed/gMamAvZk_QE"
@@ -34,9 +50,10 @@ export const Stuttmyndir: React.FC<IFrodleikur> = () => (
         }}
       ></iframe>
     </AspectRatio>
-    <Text
-      Variant="p"
-      text={`Bjarni Guðmundsson, verkefnisstjóri við Landbúnaðarsafn Íslands, segir skilvindum og mikilvægi þeirra á íslenskum heimilum á 19.- og 20. öldinni.`}
-    />
+    <Text as="p">
+      Bjarni Guðmundsson, verkefnisstjóri við Landbúnaðarsafn Íslands, segir
+      skilvindum og mikilvægi þeirra á íslenskum heimilum á 19.- og 20. öldinni.
+    </Text>
+    <Text></Text>
   </Flex>
 )
