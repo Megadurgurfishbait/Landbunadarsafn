@@ -9,6 +9,7 @@ export const Background = ({ children, mynd }) => {
         layout="fill"
         src={mynd}
         className="absolute object-cover object-right"
+        dns-prefetch="true"
       />
       <SVG
         viewBox="0 0 1920 1300"
