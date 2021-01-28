@@ -1,4 +1,4 @@
-import { Container, Flex, Text } from '@chakra-ui/react'
+import { Container, Text } from '@chakra-ui/react'
 
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import {
@@ -53,7 +53,6 @@ export const FrodleikurLayout: React.FC<{}> = () => {
 
   function handleSlugChange(query: ParsedUrlQuery) {
     // TODO: Er hægt að gera þetta betur?
-    console.log('HER! ', indexStatus)
     switch (query.slug) {
       case 'hvanneyri':
         setIndexStatus(3)
@@ -87,7 +86,7 @@ export const FrodleikurLayout: React.FC<{}> = () => {
           <Container className="flex min-h-screen min-w-full flex-col items-center ">
             <BackgroundText>
               <Text
-                letterSpacing={2}
+                letterSpacing={[1, 2]}
                 as="h1"
                 className="text-3xl text-center text-mainColor"
               >
@@ -96,22 +95,22 @@ export const FrodleikurLayout: React.FC<{}> = () => {
             </BackgroundText>
             <Tabs
               defaultIndex={indexStatus}
-              className="flex md:px-10 flex-col w-full xl:max-w-screen-lg lg:justify-center lg:m-0 lg:flex-row  lg:px-0 "
+              className="flex flex-col  w-full md:px-10 lg:justify-center lg:m-0 lg:flex-row  lg:px-0 xl:max-w-screen-lg "
             >
               <TabList
                 height="100%"
-                className="bg-white flex lg:flex-col justify-center mr-4 rounded shadow-xl "
+                className="bg-white flex-col sm:flex-row flex lg:flex-col justify-center mr-4 rounded shadow-xl "
               >
                 {data.map((tab, index) => (
                   <Tab
-                    className="m-1 my-4 text-sm lg:text-base lg:p-2 lg:my-0"
+                    className="m-1 sm:my-4 text-sm lg:text-base lg:p-2 lg:my-0"
                     key={index}
                   >
                     {tab.label}
                   </Tab>
                 ))}
               </TabList>
-              <TabPanels className="px-4 py-8 shadow-xl bg-white">
+              <TabPanels className="px-2 sm:px-4 py-8 shadow-xl bg-white">
                 {data.map((tab, index) => (
                   <TabPanel className="focus:outline-none" key={index}>
                     {tab.content}

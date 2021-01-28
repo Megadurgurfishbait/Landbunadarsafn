@@ -1,1 +1,1 @@
-export const Villa: React.FC<IFrodleikur> = () => <div>Villa</div>
+export const Villa: React.FC<{}> = () => <div>Villa</div>

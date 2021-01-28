@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_vefrits",
+  "info": {
+    "name": "Vefrit",
+    "icon": "angle-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Hofundur": {
+      "type": "string"
+    },
+    "titill": {
+      "type": "string"
+    },
+    "pdfskjal": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false
+    },
+    "Dagsetning": {
+      "type": "string"
+    }
+  }
+}

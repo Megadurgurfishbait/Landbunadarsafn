@@ -10,18 +10,18 @@ export const WelcomeText = ({ Title, SubTitle }) => (
   >
     <Text
       as="h1"
-      letterSpacing={-5}
-      className="text-7xl font-thin text-mainColor "
+      letterSpacing={[-1, -5]}
+      className="text-4xl  md:text-7xl font-thin text-mainColor "
     >
       {Title}
     </Text>
     <Divider className="opacity-60 my-3 min-w-3/4 self-start rounded"></Divider>
     <Text
       as="h3"
-      textAlign="right"
+      textAlign="left"
       color="#E4DFCF"
       noOfLines={3}
-      className=" text-2xl self-start uppercase"
+      className="text-base md:text-2xl self-start uppercase"
     >
       {SubTitle}
     </Text>

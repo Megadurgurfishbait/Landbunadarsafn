@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/arsskyrslur",
+      "handler": "arsskyrslur.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/arsskyrslur",
+      "handler": "arsskyrslur.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/arsskyrslur",
+      "handler": "arsskyrslur.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

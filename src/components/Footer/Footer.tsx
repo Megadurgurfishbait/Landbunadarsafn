@@ -3,9 +3,8 @@ import { ListMap, listToMap } from './ListMap'
 
 const Leidarvisir = [
   { title: 'Heim', href: '/' },
-  { title: 'Upplýsingar', href: '/upplysingar' },
   { title: 'Fróðleikur', href: '/frodleikur' },
-  { title: 'Allar Fréttir', href: '/allarfrettir' },
+  { title: 'Allar Fréttir', href: '/frettir' },
   { title: 'English', href: '/english' },
 ] as listToMap[]
 
@@ -45,9 +44,9 @@ export const Footer: React.FC<{}> = () => (
       justify="space-around"
       className="min-w-full bg-secondary"
     >
-      <ListMap listToMap={Leidarvisir} title="Leiðarvísir" />
       <ListMap listToMap={Frodleikur} title="Fróðleikur" />
-      <Flex>
+      <ListMap listToMap={Leidarvisir} title="Leiðarvísir" />
+      <Flex className="hidden lg:flex-1">
         <img
           src="/Lbs_logo_trans_hvitt.gif"
           alt="logo"

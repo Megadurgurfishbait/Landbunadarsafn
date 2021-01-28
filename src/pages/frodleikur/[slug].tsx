@@ -14,12 +14,12 @@ const Frodleikur: React.FunctionComponent<{}> = (): JSX.Element => {
   return (
     <FrodleikurLayout>
       <Switch test={slug as string}>
-        <C.Hvanneyri path="hvanneyri" />
-        <C.Arsskyrslur path="arsskyrslur" />
-        <C.UmSafnid path="umsafnid" />
-        <C.Stuttmyndir path="stuttmyndir" />
-        <C.Velunnarar path="velunnarar" />
-        <C.Mjolkurskolinn path="mjolkurskolinn" />
+        <C.Hvanneyri />
+        <C.Arsskyrslur />
+        <C.UmSafnid />
+        <C.Stuttmyndir />
+        <C.Velunnarar />
+        <C.Mjolkurskolinn />
       </Switch>
     </FrodleikurLayout>
   )

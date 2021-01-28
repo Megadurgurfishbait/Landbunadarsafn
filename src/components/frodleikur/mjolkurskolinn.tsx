@@ -4,7 +4,7 @@ import { useQuery } from 'react-query'
 import { getTextAsMarkup } from '../../lib/api/frodleikurFetch'
 import { DangerousDiv } from '../Shared/DangerousDiv'
 
-export const Mjolkurskolinn: React.FC<IFrodleikur> = () => {
+export const Mjolkurskolinn: React.FC<{}> = () => {
   const { isLoading, data } = useQuery('mjolkurskolinn', () =>
     getTextAsMarkup('mjolkurskolinn')
   )

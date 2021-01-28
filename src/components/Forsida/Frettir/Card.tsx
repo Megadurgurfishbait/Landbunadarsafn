@@ -5,13 +5,13 @@ import { Button } from '../../Shared/'
 export interface IFrett {
   Title: string
   TextExample: string
-  ButtonText: string
+  ButtonHref: string
 }
 
 export const CardContainer: React.FC<IFrett> = ({
   Title,
   TextExample,
-  ButtonText,
+  ButtonHref,
 }) => (
   <Container className="w-64 h-64 relative m-5">
     <Flex
@@ -24,12 +24,12 @@ export const CardContainer: React.FC<IFrett> = ({
         </Text>
       </Box>
       <Flex className="flex-1 items-center">
-        <Text noOfLines={6} className="text-sm leading-4 font-sans font-light">
+        <Text noOfLines={4} className="text-sm leading-5 font-sans font-light">
           {TextExample}
         </Text>
       </Flex>
       <Box className="h-8">
-        <Button Text={ButtonText} />
+        <Button href={`/frettir/${ButtonHref}`} Text={'Skoða frétt'} />
       </Box>
     </Flex>
     <Try />
@@ -46,7 +46,7 @@ export const CardMapper: React.FC<{ Frettir: IFrett[] }> = ({ Frettir }) => (
       <CardContainer
         Title={frett.Title}
         TextExample={frett.TextExample}
-        ButtonText={frett.ButtonText}
+        ButtonHref={frett.ButtonHref}
       />
     ))}
   </Flex>

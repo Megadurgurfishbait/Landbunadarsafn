@@ -9,7 +9,7 @@ import { Footer } from '../components/Footer/Footer'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <div className="flex flex-col relative justify-center items-center lg:mx-28 overflow-hidden min-h-screen shadow-xl">
+      <div className="flex flex-col relative justify-between items-center xl:mx-28 overflow-hidden min-h-screen shadow-xl">
         <Component {...pageProps} />
         <Divider className="2xl:h-20"></Divider>
         <Footer />

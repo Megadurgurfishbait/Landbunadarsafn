@@ -42,10 +42,7 @@ export const Vefrit: React.FC<{}> = () => {
                 pb={4}
                 className="whitespace-pre-wrap text-sm p-3 "
               >
-                <VefritComponent
-                  kynningarTexti={data.Kynningar_Texti_Fyrir_Vefrit_A}
-                  kynningarEfni={data.Skjol_Fyrir_Vefrit_A}
-                />
+                <VefritComponent kynningarEfni={data.Skjol_Fyrir_Vefrit_A} />
               </AccordionPanel>
             </AccordionItem>
             <AccordionItem>
@@ -59,10 +56,7 @@ export const Vefrit: React.FC<{}> = () => {
                 pb={4}
                 className="whitespace-pre-wrap text-sm p-3 "
               >
-                <VefritComponent
-                  kynningarTexti={data.Kynningar_Texti_Fyrir_Vefrit_B}
-                  kynningarEfni={data.Skjol_Fyrir_Vefrit_B}
-                />
+                <VefritComponent kynningarEfni={data.Skjol_Fyrir_Vefrit_B} />
               </AccordionPanel>
             </AccordionItem>
           </Accordion>

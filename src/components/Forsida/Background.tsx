@@ -4,7 +4,7 @@ import React from 'react'
 
 export const Background = ({ children, mynd }) => {
   return (
-    <BackgroundDiv mynd={mynd} className="min-h-85vh 2xl:min-h-screen">
+    <BackgroundDiv mynd={mynd} className="min-h-85vh 2xl:min-h-screen ">
       <SVG
         viewBox="0 0 1920 1300"
         preserveAspectRatio="none"

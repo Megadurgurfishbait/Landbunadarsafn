@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_textis",
+  "info": {
+    "name": "Texti",
+    "icon": "angle-double-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Texti": {
+      "type": "text"
+    }
+  }
+}
