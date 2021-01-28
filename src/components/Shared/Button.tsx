@@ -19,7 +19,7 @@ export const Button = ({
   return (
     <>
       {href ? (
-        <Link href={href}>
+        <Link href={href} prefetch={false}>
           <a className="flex items-center sm:pt-2 w-max">
             <TextNStyle Text={Text} className={className} noArrow={noArrow} />
           </a>

@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-import tw from 'twin.macro'
+import styled from '@emotion/styled'
 
 export const DangerousDiv = styled.div`
   height: max-content;
@@ -10,11 +9,15 @@ export const DangerousDiv = styled.div`
     line-height: 1rem;
     & > li {
       margin: 0px;
-      ${tw`text-sm`}
+      font-size: 0.875rem;
+      line-height: 1.25rem;
     }
   }
   & > p {
-    ${tw`text-sm my-0`}
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   & * img {
@@ -24,10 +27,17 @@ export const DangerousDiv = styled.div`
     margin-right: auto;
     padding-right: 1rem;
     padding-bottom: 1rem;
+
+    @media only screen and (max-width: 600px) {
+      max-width: 300px;
+      max-height: 300px;
+    }
   }
   & > h2 {
     text-align: center;
-    ${tw`text-center text-xl font-semibold`}
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
   }
 
   & * a {

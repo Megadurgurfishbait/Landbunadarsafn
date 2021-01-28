@@ -1,13 +1,13 @@
 /* eslint-disable no-restricted-globals */
+import * as React from 'react'
 import { Flex, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import * as React from 'react'
-import Moment from 'moment'
 import { useQuery } from 'react-query'
 import { getArticle } from '../../lib/api/frodleikurFetch'
 import { DangerousDiv } from '../../components/Shared/DangerousDiv'
-import { Button } from '../../components/Shared'
+import { Button } from '../../components/Shared/Button'
 import { CalendarIcon } from '@chakra-ui/icons'
+import format from 'date-fns/format'
 
 interface NewsProps {
   title?: string
@@ -17,7 +17,6 @@ interface NewsProps {
 
 export const News: React.FC<NewsProps> = () => {
   const router = useRouter()
-  Moment.locale('is')
 
   // Nota PId til að í fyrsta parameter svo hægt séð að nota cache
   const { isLoading, isSuccess, data } = useQuery(`${router.query.pid}`, () =>
@@ -49,7 +48,7 @@ export const News: React.FC<NewsProps> = () => {
                 letterSpacing={1.7}
                 className="text-secondary leading-4 opacity-85 text-xs py-4 font-bold"
               >
-                {Moment(data.date).format('LL')}
+                {format(new Date(data.date), 'dd/MM/yyyy')}
               </Text>
             </Flex>
             <DangerousDiv

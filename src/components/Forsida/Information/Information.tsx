@@ -1,16 +1,17 @@
 import * as React from 'react'
+
+import { Container, Flex, Text } from '@chakra-ui/react'
 import {
   IconClock,
-  IconPhone,
   IconCreditCard,
   IconInfoCircle,
-  TablerIconProps,
-} from 'tabler-icons'
-import { Container, Flex, Text } from '@chakra-ui/react'
+  IconPhone,
+  IconLocation,
+} from './Icons'
 
 interface IinfoDetails {
   name: string
-  Icon: React.FC<TablerIconProps>
+  Icon: React.FC<{}>
   text: string
 }
 
@@ -42,7 +43,7 @@ const InfoDetails = [
   },
   {
     name: 'Staðsetning',
-    Icon: IconInfoCircle,
+    Icon: IconLocation,
     text: 'Halldórsfjós \nHvanneyri, 311 Borgarnes',
   },
 ] as IinfoDetails[]
@@ -54,7 +55,7 @@ export const Information: React.FunctionComponent<{}> = () => {
         {InfoDetails.map(({ text, name, Icon }) => (
           <Flex className="w-8/12 m-2 my-4 lg:w-5/12 lg:mx-4 ">
             <Flex className="p-3">
-              <Icon size={30} className="opacity-70" />
+              <Icon />
             </Flex>
             <Flex flexDir="column">
               <Text as="h1" className="font-bold opacity-80">

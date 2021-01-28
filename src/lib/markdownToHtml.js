@@ -1,5 +1,7 @@
-import remark from 'remark'
-import html from 'remark-html'
+import dynamic from 'next/dynamic'
+
+const remark = dynamic(() => import('remark'))
+const html = dynamic(() => import('remark-html'))
 
 export default async function markdownToHtml(markdown) {
   const result = await remark().use(html).process(markdown)

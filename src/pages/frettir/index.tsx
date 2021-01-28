@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex, List, ListItem, Text } from '@chakra-ui/react'
 import { useQuery } from 'react-query'
-import Moment from 'moment'
+import { format } from 'date-fns'
 import { Button } from '../../components/Shared'
 import { fetchAPI } from '../../lib/api/getStrapiURL'
 
@@ -20,7 +20,6 @@ const Frettir: React.FC<{}> = () => {
     }
   )
 
-  Moment.locale('is')
   return (
     <>
       {isLoading ? (
@@ -36,7 +35,7 @@ const Frettir: React.FC<{}> = () => {
             {data.map((frett) => (
               <ListItem className="flex w-full px-4 lg:w-8/12 lg:px-0 h-10 justify-between items-center">
                 <Text as="h5" className="hidden md:block">
-                  {Moment(frett.date.slice(0, 11)).format('L')}
+                  {format(new Date(frett.date.slice(0, 11)), 'dd/MM/yyyy')}
                 </Text>
                 <Text
                   noOfLines={1}

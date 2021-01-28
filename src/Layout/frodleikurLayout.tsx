@@ -1,6 +1,12 @@
-import { Container, Text } from '@chakra-ui/react'
-
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Container,
+  Text,
+} from '@chakra-ui/react'
 import {
   Arsskyrslur,
   Hvanneyri,

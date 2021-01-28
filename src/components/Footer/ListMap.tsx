@@ -23,7 +23,7 @@ export const ListMap: React.FC<ListMapProps> = ({ listToMap, title }) => (
           <>
             {href ? (
               <ListItem className="leading-4 ">
-                <Link href={href}>
+                <Link href={href} prefetch={false}>
                   <a className="text-xs text-white sm:text-sm text-opacity-80">
                     {title}
                   </a>
