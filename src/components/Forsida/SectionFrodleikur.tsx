@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import { Box, Flex, Text } from '@chakra-ui/react'
+
 import { Routes } from '../../Routes'
 import { Button } from '../Shared'
 
@@ -28,6 +30,13 @@ const Kalli = [
     location: Routes.Mjolkurskolinn,
   },
 ]
+
+enum zIndex {
+  PATH = 3,
+  LIST = 2,
+  BACKGROUND_IMAGE = 1,
+}
+
 export const SectionFrodleikur = () => (
   <Flex
     h={700}
@@ -39,7 +48,7 @@ export const SectionFrodleikur = () => (
       height="164"
       style={{
         minHeight: '164px',
-        zIndex: 500,
+        zIndex: zIndex.PATH,
       }}
       viewBox="0 0 1723 164"
       fill="none"
@@ -61,17 +70,20 @@ export const SectionFrodleikur = () => (
         background="linear-gradient(135deg, rgba(143,2,34,1) 60%, rgba(173,126,137,1) 100%);"
         className="hidden sm:flex sm:w-3/5 md:w-2/3"
       >
-        <Flex
-          width="inherit"
-          height="100%"
-          className=" opacity-50 absolute bg-cover"
-          bgImage="url(/tractor.jpg)"
-          bgRepeat="no-repeat"
-          bgPosition="bottom"
-        ></Flex>
+        <Box
+          zIndex={zIndex.BACKGROUND_IMAGE}
+          className="object-cover opacity-50 sm:flex sm:w-3/5 md:w-2/3 overflow-hidden"
+        >
+          <Image
+            layout="fill"
+            src="/tractor.jpg"
+            className="sm:flex sm:w-3/5 md:w-2/3 object-cover object-center"
+          />
+        </Box>
 
         <Text
           letterSpacing={5}
+          zIndex={zIndex.LIST}
           as="h1"
           className="center text-white p-8 text-6xl font-bold absolute"
         >
@@ -79,6 +91,7 @@ export const SectionFrodleikur = () => (
         </Text>
       </Box>
       <Flex
+        zIndex={zIndex.LIST}
         bgColor="#A83852"
         className="w-full sm:w-2/5  md:w-1/3 flex-col items-center justify-center text-white sm:max-h-full text-left "
       >
@@ -101,7 +114,7 @@ export const SectionFrodleikur = () => (
       width="1713"
       height="161"
       className="absolute"
-      style={{ minHeight: '164px', bottom: '-4px' }}
+      style={{ minHeight: '164px', bottom: '-4px', zIndex: zIndex.PATH }}
       viewBox="0 0 1713 161"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

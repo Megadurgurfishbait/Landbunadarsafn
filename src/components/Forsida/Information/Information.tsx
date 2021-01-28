@@ -43,7 +43,7 @@ const InfoDetails = [
   {
     name: 'Staðsetning',
     Icon: IconInfoCircle,
-    text: 'Halldórsfjósi \nHvanneyri, 311 Borgarnes',
+    text: 'Halldórsfjós \nHvanneyri, 311 Borgarnes',
   },
 ] as IinfoDetails[]
 

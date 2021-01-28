@@ -8,6 +8,6 @@ module.exports = {
     return config
   },
   images: {
-    domains: [],
+    domains: ['landbunadarsafn.s3.eu-west-1.amazonaws.com'],
   },
 }

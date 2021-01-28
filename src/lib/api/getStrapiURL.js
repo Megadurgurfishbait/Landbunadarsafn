@@ -1,5 +1,3 @@
-import { request } from 'http'
-
 export function getStrapiURL(path = '') {
   return `${
     process.env.STRAPI_API_URL ||

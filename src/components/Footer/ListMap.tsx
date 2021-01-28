@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Flex, List, ListItem } from '@chakra-ui/react'
 import Link from 'next/link'
 
@@ -27,6 +28,10 @@ export const ListMap: React.FC<ListMapProps> = ({ listToMap, title }) => (
                     {title}
                   </a>
                 </Link>
+
+                {title === 'Halldórsfjós' && (
+                  <ExternalLinkIcon className="ml-1" color="white" w={13} />
+                )}
               </ListItem>
             ) : (
               <ListItem className="text-xs text-white sm:text-sm text-opacity-80">

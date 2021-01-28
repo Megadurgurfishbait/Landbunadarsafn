@@ -19,7 +19,7 @@ const Frodleikur = [
 
 const Stadsetning = [
   {
-    title: 'Halldórsfjósi',
+    title: 'Halldórsfjós',
     href:
       'https://www.google.com/maps/place/Hvanneyri/@64.5641466,-21.764195,16z/data=!4m5!3m4!1s0x48d5ceb4cd36053b:0xb004d859393c9017!8m2!3d64.5631151!4d-21.7563315',
   },
@@ -27,7 +27,7 @@ const Stadsetning = [
     title: 'Hvanneyri',
   },
   {
-    title: '311 Borgarnesi',
+    title: '311 Borgarnes',
   },
 ] as listToMap[]
 

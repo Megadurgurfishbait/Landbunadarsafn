@@ -18,9 +18,6 @@
     "@chakra-ui/react": "^1.1.1",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
-    "@headlessui/react": "0.2.0",
-    "@prisma/client": "2.12.1",
-    "@types/reflexbox": "^4.0.2",
     "classnames": "2.2.6",
     "framer-motion": "^3.1.4",
     "moment": "^2.29.1",
@@ -68,7 +65,7 @@
     "typescript": "4.1.2"
   },
   "husky": {
-    "hooks": {
+    "disable-hooks": {
       "pre-commit": "CI=1 npm-run-all --parallel check-types && lint-staged"
     }
   },
