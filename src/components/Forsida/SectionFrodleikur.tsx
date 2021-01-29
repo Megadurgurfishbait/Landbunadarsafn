@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Box, Text } from '@chakra-ui/react'
+import styled from '@emotion/styled'
 
 import { Routes } from '../../Routes'
 import { Button } from '../Shared'
@@ -39,6 +40,8 @@ enum zIndex {
 
 export const SectionFrodleikur = () => (
   <Box
+    id="frodleikur"
+    as="section"
     h={700}
     className="min-w-full justify-between flex-col overflow-visible relative mt-20 w-full"
   >
@@ -52,7 +55,7 @@ export const SectionFrodleikur = () => (
       viewBox="0 0 1723 164"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute "
+      className="absolute   "
     >
       <path
         fillRule="evenodd"
@@ -69,7 +72,7 @@ export const SectionFrodleikur = () => (
         background="linear-gradient(135deg, rgba(143,2,34,1) 60%, rgba(173,126,137,1) 100%);"
         className="hidden sm:flex sm:w-3/5 md:w-2/3"
       >
-        <Box
+        <StyledBox
           zIndex={zIndex.BACKGROUND_IMAGE}
           className="object-cover opacity-50 sm:flex sm:w-3/5 md:w-2/3 overflow-hidden"
         >
@@ -78,7 +81,7 @@ export const SectionFrodleikur = () => (
             src="/tractor.jpg"
             className="sm:flex sm:w-3/5 md:w-2/3 object-cover object-center"
           />
-        </Box>
+        </StyledBox>
 
         <Text
           letterSpacing={5}
@@ -91,7 +94,7 @@ export const SectionFrodleikur = () => (
       </Box>
       <div
         style={{ zIndex: zIndex.LIST, backgroundColor: '#A83852' }}
-        className="w-ful flex sm:w-2/5  md:w-1/3 flex-col items-center justify-center text-white sm:max-h-full text-left "
+        className="w-full flex sm:w-2/5  md:w-1/3 flex-col items-center justify-center text-white sm:max-h-full text-left"
       >
         <Text
           letterSpacing={5}
@@ -126,3 +129,12 @@ export const SectionFrodleikur = () => (
     </svg>
   </Box>
 )
+
+// Next/Image skilar Div í kringum img tag.
+// Þarf sérstaklega að style'a það.
+// Flott krókaleið
+const StyledBox = styled(Box)`
+  & > div {
+    width: inherit;
+  }
+`

@@ -4,6 +4,7 @@ import { useQuery } from 'react-query'
 import { format } from 'date-fns'
 import { Button } from '../../components/Shared'
 import { fetchAPI } from '../../lib/api/getStrapiURL'
+import { BackgroundText } from '../../components/frodleikur/BackgroundText'
 
 const Frettir: React.FC<{}> = () => {
   const [numberOfItems, setNumberOfItems] = React.useState<number>(10)
@@ -28,9 +29,11 @@ const Frettir: React.FC<{}> = () => {
         <div>Error: {error}</div>
       ) : (
         <div className="w-full mb-4 flex flex-col justify-between">
-          <Text as="h1" className="text-center text-3xl my-10">
-            Allar fréttir
-          </Text>
+          <BackgroundText>
+            <Text as="h1" className="text-center text-3xl my-10 text-mainColor">
+              Allar fréttir
+            </Text>
+          </BackgroundText>
           <List className="2xl:min-w-3/4  min-h-screen flex flex-col items-center">
             {data.map((frett) => (
               <ListItem className="flex w-full px-4 lg:w-8/12 lg:px-0 h-10 justify-between items-center">

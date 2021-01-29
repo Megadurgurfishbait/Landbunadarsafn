@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 import * as React from 'react'
-import { Text } from '@chakra-ui/react'
+import { Divider, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import format from 'date-fns/format'
@@ -31,14 +31,17 @@ export const News: React.FC<NewsProps> = () => {
         <div>loading</div>
       ) : (
         <div className="flex px-14 max-w-4xl flex-col mt-8 ">
-          <Button
-            onClick={() => history.back()}
-            className="w-16 mb-5 2xl:hidden"
-            noArrow
-            Text="Til baka"
-          ></Button>
+          <div className="flex flex-col items-start">
+            <Button
+              onClick={() => history.back()}
+              className="w-16 mb-5 2xl:hidden text-left"
+              noArrow
+              Text="Til baka"
+            ></Button>
+            <Divider orientation="horizontal" className="h-5" />
+          </div>
           <div className="flex flex-col justify-center">
-            <h1 className=" text-stylishBlack mb-2 leading-5 text-4xl">
+            <h1 className=" text-stylishBlack mb-2 leading-5 text-2xl font-semibold sm:text-3xl lg:text-4xl">
               {data.title}
             </h1>
             <div className="flex items-center">

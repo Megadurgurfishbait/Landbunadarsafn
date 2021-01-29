@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import { useQuery } from 'react-query'
 import { Container, Text } from '@chakra-ui/react'
 import {
   IconClock,
@@ -8,6 +8,7 @@ import {
   IconPhone,
   IconLocation,
 } from './Icons'
+import { getText } from '../../../lib/api/frodleikurFetch'
 
 interface IinfoDetails {
   name: string
@@ -15,59 +16,94 @@ interface IinfoDetails {
   text: string
 }
 
-const InfoDetails = [
-  {
-    name: 'Opnunartími',
-    Icon: IconClock,
-    text:
-      'Í vetur var safnið opið fimmtudaga, föstudaga og laugardaga á sama tíma og Ullarselið, sem er í anddyri safnsins. Landbúnaðarsafn Íslands er opið reglulega mánuðina júní, júlí og ágúst, daglega kl. 11-17. Á öðrum tímum er safnið opið eftir þörfum.',
-  },
-  {
-    name: 'Hafa Samband',
-    Icon: IconPhone,
-    text:
-      'Vinsamlegast hafið samband í síma 844 7740, einnig má hafa samband við skiptiborð Landbúnaðarháskólans, í síma 433 5000. Hópum er veitt leiðsögn um safnið, sé þess óskað.',
-  },
-  {
-    name: 'Aðgangseyrir',
-    Icon: IconCreditCard,
-    text:
-      'Almennur aðgangseyrir að safninu er: 1.400 kr. fyrir fullorðna (og í hópum sem sérstök leiðsögn er veitt); 1100 kr. fyrir öryrkja og eldri borgara ókeypis er fyrir 14 ára og yngri í fylgd fullorðinna.',
-  },
-
-  {
-    name: 'Kynningar',
-    Icon: IconInfoCircle,
-    text:
-      'Einnig er boðið upp á stutta kynningu á Hvanneyrarstað og starfinu þar m.a. með heimsókn í Hvanneyrarkirkju, eina fallegustu kirkju landsins og örstuttri gönguferð um Gamla skólastaðinn (þegar veður leyfir). Æskilegt er að panta slíka kynningu með fyrirvara (s. 844 77 40). Minnt er á Skemmuna kaffihús í næsta nágrenni safnsins, sem er opið daglega í sumar frá kl. 13.30.',
-  },
-  {
-    name: 'Staðsetning',
-    Icon: IconLocation,
-    text: 'Halldórsfjós \nHvanneyri, 311 Borgarnes',
-  },
-] as IinfoDetails[]
-
 export const Information: React.FunctionComponent<{}> = () => {
+  const { isLoading, data } = useQuery('Info', () =>
+    getText('forsidu-upplysingar')
+  )
+
+  if (isLoading) return <div>hleður</div>
+
+  let { Upplysingar } = data
   return (
-    <Container className="flex justify-center">
+    <Container
+      as="section"
+      id="upplysingar"
+      className="flex justify-center lg:w-11/12"
+    >
       <div className="py-4 flex justify-center flex-wrap lg:w-full lg:justify-start xl:w-9/12 ">
-        {InfoDetails.map(({ text, name, Icon }) => (
-          <div className="w-8/12 m-2 my-4 lg:w-5/12 lg:mx-4 flex">
-            <div className="p-3 flex">
-              <Icon />
-            </div>
-            <div className="flex flex-col">
-              <Text as="h1" className="font-bold opacity-80">
-                {name}
-              </Text>
-              <Text as="p" className="opacity-60 whitespace-pre-wrap">
-                {text}
-              </Text>
-            </div>
-          </div>
-        ))}
+        {
+          /* Opnunartími  */
+          Upplysingar[0] && (
+            <InfoDetailsContainer
+              name={Upplysingar[0].Titill}
+              Icon={IconClock}
+              text={Upplysingar[0].Texti}
+            />
+          )
+        }
+        {
+          /* Hafa Samband  */
+          Upplysingar[1] && (
+            <InfoDetailsContainer
+              name={Upplysingar[1].Titill}
+              Icon={IconPhone}
+              text={Upplysingar[1].Texti}
+            />
+          )
+        }
+        {
+          /* Aðgangseyrir  */
+
+          Upplysingar[2] && (
+            <InfoDetailsContainer
+              name={Upplysingar[2].Titill}
+              Icon={IconCreditCard}
+              text={Upplysingar[2].Texti}
+            />
+          )
+        }
+        {
+          /* Kynningar  */
+
+          Upplysingar[3] && (
+            <InfoDetailsContainer
+              name={Upplysingar[3].Titill}
+              Icon={IconInfoCircle}
+              text={Upplysingar[3].Texti}
+            />
+          )
+        }
+        {
+          /* Staðsetningar  */
+          Upplysingar[4] && (
+            <InfoDetailsContainer
+              name={Upplysingar[4].Titill}
+              Icon={IconLocation}
+              text={Upplysingar[4].Texti}
+            />
+          )
+        }
       </div>
     </Container>
   )
 }
+
+export const InfoDetailsContainer: React.FC<IinfoDetails> = ({
+  Icon,
+  name,
+  text,
+}) => (
+  <div className="w-10/12 m-2 my-4 lg:w-5/12 lg:mx-4 flex">
+    <div className="p-3 flex">
+      <Icon />
+    </div>
+    <div className="flex flex-col">
+      <Text as="h1" className="font-bold opacity-80">
+        {name}
+      </Text>
+      <Text as="p" className="opacity-60 whitespace-pre-wrap">
+        {text}
+      </Text>
+    </div>
+  </div>
+)

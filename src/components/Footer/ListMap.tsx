@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { List, ListItem } from '@chakra-ui/react'
+import { List, ListItem, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 
 export interface listToMap {
@@ -34,8 +34,10 @@ export const ListMap: React.FC<ListMapProps> = ({ listToMap, title }) => (
                 )}
               </ListItem>
             ) : (
-              <ListItem className="text-xs text-white sm:text-sm text-opacity-80">
-                {title}
+              <ListItem className="leading-4 overflow-ellipsis">
+                <Text className="text-xs text-white sm:text-sm text-opacity-80 ">
+                  {title}
+                </Text>
               </ListItem>
             )}
           </>

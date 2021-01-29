@@ -20,10 +20,13 @@ export const SectionFrettir = () => {
       {!isSuccess ? (
         <div>Hleður</div>
       ) : (
-        <div className="bg-transparent items-center justify-center flex w-full flex-col">
+        <section
+          id="frettir"
+          className="bg-transparent items-center justify-center flex w-full flex-col"
+        >
           <CardMapper Frettir={Items} />
           <Button Text="Skoða allar fréttir" href="frettir" />
-        </div>
+        </section>
       )}
     </>
   )
