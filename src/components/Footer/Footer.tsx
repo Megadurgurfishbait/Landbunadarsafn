@@ -51,8 +51,7 @@ export const Footer: React.FC<{}> = () => {
         <ListMap listToMap={Leidarvisir} title="Leiðarvísir" />
 
         <div className="hidden lg:flex-1 lg:flex-col lg:my-8 lg:items-center lg:object-scale-down lg:flex">
-          <Image
-            layout="fixed"
+          <img
             height={100}
             width={100}
             dns-prefetch="true"
